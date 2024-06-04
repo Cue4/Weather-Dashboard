@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+}
+.header {
+    background-color: navy;
+    padding: 40px;
+    margin: 5px;
+}
+
