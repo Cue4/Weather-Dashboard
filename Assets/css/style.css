@@ -30,3 +30,13 @@ h2 {
     width: 238px; 
     background-color: lightblue;
 }
+
+.container {
+  display: flex; 
+}
+.box.box.box-daily {
+    padding: 5px;
+    margin: 10px;
+    width: 900px;
+    height: 100px;
+}

@@ -13,19 +13,26 @@
         </nav>
     </header>
     <main>
-        <section>
-            <aside class="">
-                <h2>Search For A City:</h2>
-                <label for="site-search"></label>
-                <input id="info-input" class="search" type="text" placeholder="City or State or Zip Code"><br>
-                <button class="button" id="submit">Search</button>
-            </aside>
-        </section>
-        <section> 
-            <div id="search-history"></div>> 
-                <input class="box box-daily" placeholder="daily-forcast">
+        <div class="container">
+            <div class="section">
+                <aside class="">
+                    <h2>Search For A City:</h2>
+                    <label for="site-search"></label>
+                    <input id="info-input" class="search" type="text" placeholder="City or State or Zip Code"><br>
+                    <button class="button" id="submit">Search</button>
+                </aside> 
+            </div> 
+            <div id="weather-info">      
+                <div class="section"> 
+                    <div id="search-history">
+                        <input class="box box-daily" placeholder="">
+                        <table class="card-body table">
+                            <tbody id="repo-table" class="mx-auto text-center"></tbody>
+                        </table>
+                    </div>    
+                </div>        
             </div>
-        </section>
+        </div>    
     </main>
     <script src="./assets/js/script.js"></script>       
 </body>
