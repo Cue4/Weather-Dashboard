@@ -1,7 +1,7 @@
-const searchElement = document.querySelector('#info-input')
-const submitEl = document.querySelector('#submit')
+const searchElement = document.querySelector('#info-input');
+const submitEl = document.querySelector('#submit');
 const weatherInfoDiv = document.getElementById("weather-info");
-const apiKey = "7ff58370abe33390e3138197fc8cbbc9";
+const apiKey = `7ff58370abe33390e3138197fc8cbbc9`;
 
 function showResponse(event) {
     event.preventDefault();
@@ -13,7 +13,7 @@ submitEl.addEventListener("click", () => {
 });
 
 function getWeatherData(city) {
-    const requestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`;
+    const requestUrl = `https://openweathermap.org/data/2.5/weather?q=Columbus,Ohio&appid=${apiKey}`;
 
     fetch(requestUrl)
         .then(function (response){
@@ -28,26 +28,40 @@ function getWeatherData(city) {
             console.log(error);
         });
 }        
-function updateWeatherInfo(data) {
-    weatherInfoDiv.innerHTML = `
-        Weather in ${data.name}
-        Temperature: ${data.main.temp}°C
-        Conditions: ${data.weather[0].description}
-    `;
-}
+getWeatherData()
+
+const city = document.getElementById("weather-info");
+city.textContent = weatherInfoDiv.city;
+weatherInfoDiv.appendChild(searchElement);
+
+// Loop through the weather forecast data and create elements for each forecast
+weatherInfoDiv.(forecast => {
+    const forecastDiv = document.getElementsByClassName('box box-daily');
+    forecastDiv.textContent = `Date: ${forecast.dt_txt}, Temperature: ${forecast.main.temp}`;
+    weatherInfoDiv.appendChild(forecastDiv);
+});
+
+// function updateWeatherInfo(data) {
+//     weatherInfoDiv.innerHTML = `
+//         Weather in ${data.name}
+//         Temperature: ${data.main.temp}°C
+//         Conditions: ${data.weather[0].description}
+//     `;
+
             
-        // for(const reop of data) {
-        //     const createTableRow = document.createElement('tr');
-        //     const tableData = document.createElement('td');
-        //     const link = document.createElement('a');
+//         for(const weather of data) {
+//             const createTableRow = document.createElement('tr');
+//             const tableData = document.createElement('td');
+//             const link = document.createElement('a');
 
-        // link.textContent = repo.html_url;
-        // link.href = repo.html_url;
+//         // link.textContent = repo.html_url;
+//         // link.href = repo.html_url;
 
-        // tableData.appendChild(link);
-        // createTableRow.appendChild(tableData);
-        // tableBody.appendChild(createTableRow);
-    //   }
+//         tableData.appendChild(link);
+//         createTableRow.appendChild(tableData);
+//         tableBody.appendChild(createTableRow);
+//       }
+//     }
         // getApi()
     
     
